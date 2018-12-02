@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dno-If-AXf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dno-If-AXf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,18 +81,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="799.20000000000005" y="98.50074962518741"/>
+            <point key="canvasLocation" x="798" y="99"/>
         </scene>
         <!--Dream Tracker-->
         <scene sceneID="8Au-mq-F4X">
             <objects>
-                <tableViewController title="Dream Tracker" id="Lc6-Gc-Roi" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="listDreamIdentifier" title="Dream Tracker" id="Lc6-Gc-Roi" customClass="ListDreamTableViewController" customModule="DreamTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RsJ-Xq-FKg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="132" id="7JJ-2N-t67">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DreamCell" rowHeight="132" id="7JJ-2N-t67" customClass="CustomTableViewCell" customModule="DreamTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="132"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7JJ-2N-t67" id="G8Z-sX-cDV">
@@ -118,7 +118,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Progress: 2/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F78-f7-plm">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 2/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F78-f7-plm">
                                             <rect key="frame" x="124" y="99.5" width="87" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
@@ -131,12 +131,19 @@
                                         <constraint firstItem="q5O-Id-mwy" firstAttribute="top" secondItem="Vjw-kd-ApM" secondAttribute="top" id="Kp5-q0-Dzr"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="D8Y-9P-kMt" secondAttribute="trailing" constant="16" id="Xte-Df-HlL"/>
                                         <constraint firstAttribute="bottom" secondItem="Vjw-kd-ApM" secondAttribute="bottom" constant="16" id="Yas-6i-uGE"/>
+                                        <constraint firstItem="F78-f7-plm" firstAttribute="leading" secondItem="Vjw-kd-ApM" secondAttribute="trailing" constant="8" id="a8g-SF-RIM"/>
                                         <constraint firstItem="Vjw-kd-ApM" firstAttribute="top" secondItem="G8Z-sX-cDV" secondAttribute="top" constant="16" id="eoW-qu-pQz"/>
                                         <constraint firstItem="F78-f7-plm" firstAttribute="bottom" secondItem="Vjw-kd-ApM" secondAttribute="bottom" id="oHb-Hg-b1J"/>
                                         <constraint firstItem="D8Y-9P-kMt" firstAttribute="top" secondItem="q5O-Id-mwy" secondAttribute="bottom" constant="8" id="r2m-PO-xMs"/>
                                         <constraint firstItem="D8Y-9P-kMt" firstAttribute="leading" secondItem="q5O-Id-mwy" secondAttribute="leading" id="wJN-64-jzi"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descLabel" destination="D8Y-9P-kMt" id="TmM-XT-BXT"/>
+                                    <outlet property="thumbnailImageView" destination="Vjw-kd-ApM" id="cTE-pc-K80"/>
+                                    <outlet property="titleLabel" destination="q5O-Id-mwy" id="xnG-qV-cZP"/>
+                                    <outlet property="todoLabel" destination="F78-f7-plm" id="960-sM-oin"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -144,7 +151,7 @@
                             <outlet property="delegate" destination="Lc6-Gc-Roi" id="M66-Gq-CJw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Dream Tracker" id="JTH-l1-I5L">
+                    <navigationItem key="navigationItem" title="Dream Tracker" id="JTH-l1-I5L" customClass="List">
                         <barButtonItem key="backBarButtonItem" title="Dream Tracker" id="qUv-G4-00n"/>
                         <barButtonItem key="rightBarButtonItem" title="+ Add Dream" id="AC4-L1-YSN">
                             <connections>
@@ -153,7 +160,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="HKT-lq-pZm" kind="show" id="KrB-iU-p8t"/>
+                        <outlet property="listDreamTableView" destination="RsJ-Xq-FKg" id="Zh7-sH-NN3"/>
+                        <segue destination="HKT-lq-pZm" kind="show" identifier="DreamDetail" id="KrB-iU-p8t"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vdg-WL-Kb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +171,7 @@
         <!--Add Dream-->
         <scene sceneID="WEh-1P-I7O">
             <objects>
-                <viewController title="Add Dream" id="5F0-dW-bg3" sceneMemberID="viewController">
+                <viewController title="Add Dream" id="5F0-dW-bg3" customClass="AddDreamViewController" customModule="DreamTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="osF-F0-PBw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,11 +203,11 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QGc-xc-dhA">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QGc-xc-dhA">
                                         <rect key="frame" x="16" y="300" width="343" height="30.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XZq-cE-hax">
                                         <rect key="frame" x="67.5" y="338.5" width="240" height="212.5"/>
@@ -211,6 +219,7 @@
                                     <constraint firstAttribute="trailing" secondItem="MKm-wX-Lei" secondAttribute="trailing" constant="16" id="7e6-Q6-nQQ"/>
                                     <constraint firstItem="QGc-xc-dhA" firstAttribute="leading" secondItem="BEZ-KT-9h6" secondAttribute="leading" constant="16" id="9ey-zt-Li1"/>
                                     <constraint firstAttribute="trailing" secondItem="LXd-0g-JbC" secondAttribute="trailing" constant="16" id="9t2-iF-Pp4"/>
+                                    <constraint firstItem="XZq-cE-hax" firstAttribute="top" secondItem="QGc-xc-dhA" secondAttribute="bottom" constant="16" id="A0O-vF-wJD"/>
                                     <constraint firstAttribute="trailing" secondItem="Toi-8J-SjT" secondAttribute="trailing" constant="16" id="S15-3n-0MF"/>
                                     <constraint firstItem="MKm-wX-Lei" firstAttribute="leading" secondItem="BEZ-KT-9h6" secondAttribute="leading" constant="16" id="WV6-Xa-sLi"/>
                                     <constraint firstItem="Toi-8J-SjT" firstAttribute="leading" secondItem="BEZ-KT-9h6" secondAttribute="leading" constant="16" id="XW6-hI-wPz"/>
@@ -232,8 +241,16 @@
                         <viewLayoutGuide key="safeArea" id="SwB-uP-agX"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Dream" id="94E-es-G8b">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="lFm-5v-pF4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="lFm-5v-pF4">
+                            <connections>
+                                <action selector="tapSaveDream:" destination="5F0-dW-bg3" id="o4P-qc-Rte"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dreamDesc" destination="QGc-xc-dhA" id="N2g-hA-Pds"/>
+                        <outlet property="dreamTitle" destination="MKm-wX-Lei" id="LaY-9y-fAE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llG-9V-Mck" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -242,7 +259,7 @@
         <!--Honeymoon to Maldives-->
         <scene sceneID="4bV-Oj-zvs">
             <objects>
-                <viewController title="Honeymoon to Maldives" id="HKT-lq-pZm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dreamDetailIdentifier" title="Honeymoon to Maldives" id="HKT-lq-pZm" customClass="DreamDetailViewController" customModule="DreamTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="41f-BK-Af6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,9 +273,14 @@
                                             <constraint firstAttribute="height" constant="150" id="HQR-fD-kZd"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTO-9K-DLp">
-                                        <rect key="frame" x="16" y="158" width="343" height="240"/>
-                                        <string key="text">Lengthy description here
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTO-9K-DLp">
+                                        <rect key="frame" x="16" y="158" width="343" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="rTO-9K-DLp" secondAttribute="height" multiplier="343:200" id="1Dr-3F-fqI"/>
+                                        </constraints>
+                                        <string key="text">Lengthy description herez Lengthy description herezLengthy description herez Some more about dream What to achieve
+Why we want to achieve
+etc etc lalalalala Lengthy description here
 Some more about dream
 What to achieve
 Why we want to achieve
@@ -268,8 +290,8 @@ lalalalala</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TO-DO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rde-D0-PzU">
-                                        <rect key="frame" x="16" y="406" width="343" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO-DO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rde-D0-PzU">
+                                        <rect key="frame" x="16" y="366" width="343" height="69"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -325,8 +347,13 @@ lalalalala</string>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="rde-D0-PzU" firstAttribute="top" secondItem="rTO-9K-DLp" secondAttribute="bottom" constant="16" id="86M-1O-DJN"/>
+                                    <constraint firstItem="540-pM-IW1" firstAttribute="leading" secondItem="MVa-6F-had" secondAttribute="leading" constant="16" id="CgV-cb-RPQ"/>
+                                    <constraint firstItem="2OS-eI-IBL" firstAttribute="leading" secondItem="MVa-6F-had" secondAttribute="leading" constant="16" id="FhC-mK-xW5"/>
                                     <constraint firstItem="rTO-9K-DLp" firstAttribute="leading" secondItem="MVa-6F-had" secondAttribute="leading" constant="16" id="Ihp-OP-luq"/>
+                                    <constraint firstItem="rde-D0-PzU" firstAttribute="leading" secondItem="MVa-6F-had" secondAttribute="leading" constant="16" id="J6w-cy-fVD"/>
                                     <constraint firstItem="rTO-9K-DLp" firstAttribute="top" secondItem="DkR-6h-tYq" secondAttribute="bottom" constant="8" id="LGl-zX-eYc"/>
+                                    <constraint firstItem="2OS-eI-IBL" firstAttribute="top" secondItem="540-pM-IW1" secondAttribute="bottom" constant="8" id="SM2-Hm-JJA"/>
+                                    <constraint firstItem="540-pM-IW1" firstAttribute="top" secondItem="rde-D0-PzU" secondAttribute="bottom" constant="8" id="Xhx-DD-u2q"/>
                                     <constraint firstAttribute="trailing" secondItem="rTO-9K-DLp" secondAttribute="trailing" constant="16" id="YHK-Lt-b4Z"/>
                                     <constraint firstAttribute="trailing" secondItem="rde-D0-PzU" secondAttribute="trailing" constant="16" id="jv8-YH-qdP"/>
                                     <constraint firstItem="rde-D0-PzU" firstAttribute="leading" secondItem="MVa-6F-had" secondAttribute="leading" constant="16" id="m1l-S0-1XM"/>
@@ -346,10 +373,15 @@ lalalalala</string>
                         <barButtonItem key="backBarButtonItem" title="Honeymoon to Maldives" id="4Fh-qt-uMi"/>
                         <barButtonItem key="rightBarButtonItem" title="+ Add TO-DO Item" id="lHZ-af-CLH">
                             <connections>
-                                <segue destination="4fE-zB-E3R" kind="show" id="IY7-Fj-VTy"/>
+                                <segue destination="4fE-zB-E3R" kind="show" identifier="todoIdentifier" id="IY7-Fj-VTy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dreamDesc" destination="rTO-9K-DLp" id="sz8-xs-ZvM"/>
+                        <outlet property="dreamImage" destination="DkR-6h-tYq" id="CSJ-pw-jRb"/>
+                        <outlet property="dreamTitle" destination="Afd-Vb-U5B" id="2WQ-7M-gmr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Amj-4S-p8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -358,7 +390,7 @@ lalalalala</string>
         <!--Add TO-DO Item-->
         <scene sceneID="f3D-Ag-km5">
             <objects>
-                <viewController title="Add TO-DO Item" id="4fE-zB-E3R" sceneMemberID="viewController">
+                <viewController title="Add TO-DO Item" id="4fE-zB-E3R" customClass="SaveTodoViewController" customModule="DreamTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qeh-ll-Fyv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,9 +411,16 @@ lalalalala</string>
                         <viewLayoutGuide key="safeArea" id="NvO-AM-vZg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add TO-DO Item" id="wfq-Be-hSb">
-                        <barButtonItem key="backBarButtonItem" title="Honeymoon to Maldives" id="Lqf-1f-9wf"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="X1u-Kx-kRU"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Lqf-1f-9wf"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="X1u-Kx-kRU">
+                            <connections>
+                                <action selector="tapSaveTodo:" destination="4fE-zB-E3R" id="4hr-nC-KeG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="todoTextField" destination="DYG-od-zfR" id="tk7-fU-A8w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pVr-d3-9yz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

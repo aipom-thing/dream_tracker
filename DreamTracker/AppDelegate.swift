@@ -13,15 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       let userDefaults = UserDefaults.standard
-        if userDefaults.bool(forKey: "isLogin"){
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let secondVC = storyBoard.instantiateViewController(withIdentifier: "listIdentifier")
-            window?.rootViewController = secondVC
-        }
+//       let userDefaults = UserDefaults.standard
+//        if userDefaults.bool(forKey: "isLogin"){
+//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//            let secondVC = storyBoard.instantiateViewController(withIdentifier: "listIdentifier")
+//            window?.rootViewController = secondVC
+//        }
+        
         return true
     }
 

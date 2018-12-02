@@ -10,6 +10,11 @@
 		320DBF4FE6F2CD0F420E155B /* Pods_DreamTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67946D0006B89CED9A12D986 /* Pods_DreamTracker.framework */; };
 		CB293013219E56900000BC1E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB293012219E56900000BC1E /* RegisterViewController.swift */; };
 		E5BC22C821A4FC56002A23E2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BC22C721A4FC56002A23E2 /* LoginViewController.swift */; };
+		E5D582E721B3B816005AEDB1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D582E621B3B816005AEDB1 /* CustomTableViewCell.swift */; };
+		E5D582E921B3D96C005AEDB1 /* AddDreamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D582E821B3D96C005AEDB1 /* AddDreamViewController.swift */; };
+		E5D582EB21B3FBAC005AEDB1 /* DreamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D582EA21B3FBAC005AEDB1 /* DreamDetailViewController.swift */; };
+		E5D582ED21B41945005AEDB1 /* SaveTodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D582EC21B41945005AEDB1 /* SaveTodoViewController.swift */; };
+		E5DD9B1D21B2F01C00075FA2 /* ListDreamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DD9B1C21B2F01C00075FA2 /* ListDreamTableViewController.swift */; };
 		F96B441821492B2500FDFD60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B441721492B2500FDFD60 /* AppDelegate.swift */; };
 		F96B441A21492B2500FDFD60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96B441921492B2500FDFD60 /* ViewController.swift */; };
 		F96B441D21492B2500FDFD60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F96B441B21492B2500FDFD60 /* Main.storyboard */; };
@@ -23,6 +28,11 @@
 		CB293012219E56900000BC1E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CD7CFDED9CD736729A3EC9A7 /* Pods-DreamTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DreamTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-DreamTracker/Pods-DreamTracker.release.xcconfig"; sourceTree = "<group>"; };
 		E5BC22C721A4FC56002A23E2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E5D582E621B3B816005AEDB1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		E5D582E821B3D96C005AEDB1 /* AddDreamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDreamViewController.swift; sourceTree = "<group>"; };
+		E5D582EA21B3FBAC005AEDB1 /* DreamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamDetailViewController.swift; sourceTree = "<group>"; };
+		E5D582EC21B41945005AEDB1 /* SaveTodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTodoViewController.swift; sourceTree = "<group>"; };
+		E5DD9B1C21B2F01C00075FA2 /* ListDreamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDreamTableViewController.swift; sourceTree = "<group>"; };
 		F96B441421492B2500FDFD60 /* DreamTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F96B441721492B2500FDFD60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F96B441921492B2500FDFD60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +100,11 @@
 				F96B442321492B2700FDFD60 /* Info.plist */,
 				CB293012219E56900000BC1E /* RegisterViewController.swift */,
 				E5BC22C721A4FC56002A23E2 /* LoginViewController.swift */,
+				E5DD9B1C21B2F01C00075FA2 /* ListDreamTableViewController.swift */,
+				E5D582E621B3B816005AEDB1 /* CustomTableViewCell.swift */,
+				E5D582E821B3D96C005AEDB1 /* AddDreamViewController.swift */,
+				E5D582EA21B3FBAC005AEDB1 /* DreamDetailViewController.swift */,
+				E5D582EC21B41945005AEDB1 /* SaveTodoViewController.swift */,
 			);
 			path = DreamTracker;
 			sourceTree = "<group>";
@@ -234,8 +249,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5D582E721B3B816005AEDB1 /* CustomTableViewCell.swift in Sources */,
 				E5BC22C821A4FC56002A23E2 /* LoginViewController.swift in Sources */,
+				E5D582ED21B41945005AEDB1 /* SaveTodoViewController.swift in Sources */,
+				E5DD9B1D21B2F01C00075FA2 /* ListDreamTableViewController.swift in Sources */,
+				E5D582E921B3D96C005AEDB1 /* AddDreamViewController.swift in Sources */,
 				CB293013219E56900000BC1E /* RegisterViewController.swift in Sources */,
+				E5D582EB21B3FBAC005AEDB1 /* DreamDetailViewController.swift in Sources */,
 				F96B441A21492B2500FDFD60 /* ViewController.swift in Sources */,
 				F96B441821492B2500FDFD60 /* AppDelegate.swift in Sources */,
 			);
