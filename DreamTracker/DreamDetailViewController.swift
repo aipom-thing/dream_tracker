@@ -2,7 +2,7 @@
 //  DreamDetailViewController.swift
 //  DreamTracker
 //
-//  Created by Erhem on 02/12/18.
+//  Created by Thing on 02/12/18.
 //  Copyright © 2018 Tokopedia. All rights reserved.
 //
 
@@ -21,7 +21,10 @@ class DreamDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("WAAAA")
+        var sizeRect = UIScreen.main.bounds
+        var width    = sizeRect.size.width
+        var height   = sizeRect.size.height
+        
         print(dreamDtlID)
 //        if hitAPI == false{
 //            print(dreamDetailData)
@@ -80,6 +83,27 @@ class DreamDetailViewController: UIViewController {
                                     if data != nil {
                                         self.dreamImage.image = UIImage(data:data! as Data)
                                     }
+                                    
+                                    var i = 0
+                                    while i < responseData.data.todo.count{
+                                        let position: CGFloat = 5*height/6 + CGFloat(i*40)
+                                        let viewTest = UIView(frame: CGRect(x:0, y:position, width:width, height:30))
+
+                                        let switchDemo = UISwitch()
+                                        switchDemo.isOn = responseData.data.todo[i].is_checked ?? false
+                                        switchDemo.tag = responseData.data.todo[i].id ?? 0
+                                        viewTest.addSubview(switchDemo)
+                                        
+                                        let switchLbl = UILabel(frame: CGRect(x:60, y:0, width:200, height:30))
+                                        switchLbl.text = responseData.data.todo[i].title
+                                        viewTest.addSubview(switchLbl)
+                                        
+                                        self.view.addSubview(viewTest)
+                                        
+                                        switchDemo.addTarget(self, action: #selector(self.switchChanged), for: UIControlEvents.valueChanged)
+
+                                        i += 1
+                                    }
                                 }
                             }
                         }
@@ -90,7 +114,6 @@ class DreamDetailViewController: UIViewController {
             }
 //        }
         // Do any additional setup after loading the view.
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -104,6 +127,45 @@ class DreamDetailViewController: UIViewController {
         }
     }
 
+    @objc func switchChanged(mySwitch: UISwitch) {
+        let state = mySwitch.isOn
+        let tag = mySwitch.tag
+        var whatToDo = "uncheck"
+        
+        if state == true {
+                whatToDo = "check"
+        }
+        
+        let headers = [
+            "Authorization" : "Bearer " + AccessToken,
+            "Content-Type": "application/json"
+        ]
+        
+        struct checkUncheckResp: Codable{
+            let success: Bool?
+            let data: String? = ""
+            let error: String? = ""
+        }
+        
+        Alamofire
+            .request(URL(string: "http://93.188.167.250:8080/todo/" + String(tag ?? 0) + "/" + whatToDo)!,
+                     method: .post,
+                     encoding: JSONEncoding.default,
+                     headers: headers
+            )
+            .responseJSON{ (response) in
+                if let data = response.data {
+                    let jsonDecoder = JSONDecoder()
+                    if let responseData = try? jsonDecoder.decode(checkUncheckResp.self, from: data){
+                        if responseData.success == true{
+                            print("Success " + whatToDo + " todo id : " + String(tag))
+                        }else{
+                            print("Failed " + whatToDo + " todo id : " + String(tag))
+                        }
+                    }
+                }
+        }
+    }
     /*
     // MARK: - Navigation
 

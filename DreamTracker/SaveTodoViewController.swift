@@ -44,7 +44,7 @@ class SaveTodoViewController: UIViewController {
                 .request(URL(string: "http://93.188.167.250:8080/dreams/" + String(dreamIDTodo ?? 0) + "/todo")!,
                          method: .post,
                          parameters: [
-                            "title": title,
+                            "title": todo,
                             ],
                          encoding: JSONEncoding.default,
                          headers: headers

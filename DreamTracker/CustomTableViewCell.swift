@@ -2,7 +2,7 @@
 //  CustomTableViewCell.swift
 //  DreamTracker
 //
-//  Created by Erhem on 02/12/18.
+//  Created by Thing on 02/12/18.
 //  Copyright © 2018 Tokopedia. All rights reserved.
 //
 
